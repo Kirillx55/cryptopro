@@ -19,7 +19,7 @@ func TestCryptSignHash(t *testing.T) {
 	//client, err := CertFindCertificateInStore(store, "39da49123dbe70e953f394074d586eb692f3328e",
 	//	CERT_FIND_SHA1_HASH)
 
-	client, err := CertFindCertificateInStore(store, "365050de109cbe26a1f1a09b5a10c6485d6bbe56",
+	client, err := CertFindCertificateInStore(store, "4c880bda646323cad15a8708ba947aa8043e03a4",
 		CERT_FIND_SHA1_HASH)
 	defer CertFreeCertificateContext(client)
 	if err != nil {
@@ -32,7 +32,7 @@ func TestCryptSignHash(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	hash, err := CreateCryptHash(context, CALG_GR3411)
+	hash, err := CreateCryptHash(context, CALG_GR3411_2012_256)
 	defer hash.DestoryHash()
 	if err != nil {
 		t.Fatal(err)
